@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Doctors", "Index", "Doctors")</li>
+        <li>@Html.ActionLink("Patients", "Index", "Patient")</li>        
+        <li>@Html.ActionLink("Search Doctors", "Search", "Doctors")</li>        
+        <li>@Html.ActionLink("Search Patients", "Search", "Patient")</li>        
+    </ul>
+</div>
