@@ -16,12 +16,13 @@ namespace Hospital.Controllers
         // GET: Patient
         public ActionResult Index(string name)
         {
-            if (!String.IsNullOrEmpty(name))
+          if (!String.IsNullOrEmpty(name))
             {
-                return View(db.Doctors.Where(d => d.Name.Contains(name)).ToList());
+                return View(db.Patients.Where(p => p.Name.Contains(name)).ToList());
             }
-            return View(db.Doctors.ToList()); 
+            return View(db.Patients.ToList());
         }
+        
         // GET: Patient/Details/5
         public ActionResult Details(int? id)
         {
