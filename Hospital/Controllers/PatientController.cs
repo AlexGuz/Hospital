@@ -14,15 +14,14 @@ namespace Hospital.Controllers
         private HospitalContext db = new HospitalContext();
 
         // GET: Patient
-        public ActionResult Index()
+        public ActionResult Index(string name)
         {
-            if (db.Patients.ToList() != null)
+            if (!String.IsNullOrEmpty(name))
             {
-                return View(db.Patients.ToList());
+                return View(db.Doctors.Where(d => d.Name.Contains(name)).ToList());
             }
-            return RedirectToAction("Create");
+            return View(db.Doctors.ToList()); 
         }
-
         // GET: Patient/Details/5
         public ActionResult Details(int? id)
         {
