@@ -5,7 +5,13 @@
 }
 
 <h2>Index</h2>
-
+@using (Html.BeginForm())
+{
+    <p>
+        Find Doctor: @Html.TextBox("name")
+        <input type="submit" value="Search" />
+    </p>
+}
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
