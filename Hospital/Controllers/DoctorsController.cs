@@ -118,24 +118,6 @@ namespace Hospital.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public ActionResult Search()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Search(string name)
-        {
-            List<Doctor> doctors = (db.Doctors.Where(d => d.Name == name)).ToList();
-
-            foreach (var doc in doctors)
-            {
-                return RedirectToAction("Details", doc.Id);
-            }
-            return View();
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
